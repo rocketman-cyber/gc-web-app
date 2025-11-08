@@ -1,0 +1,32 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "First name your man gave you?",
+        "options": ["Goofy Chica", "Tiny Queen", "Marshmellow Pillows", "Hobo"],
+        "hint":"JW's partner in crime",
+        "answer": "Goofy Chica"
+      },
+      {
+        "id": 2,
+        "text": "What does your man find most attractive about you?",
+        "options": ["Big Eyes 👀", "The Pillows", "The Bumz 🍑", "Nothing, he hates me"],
+        "hint":"You use it to get what you want",
+        "answer": "Big Eyes 👀"
+      },
+      {
+        "id": 3,
+        "text": "What do you find most attractive about your mans?",
+        "options": ["The Disco Stick 🍆", "The Back 💪", "The toxicness", "Nothing, I hate him"],
+        "hint":"You hate me",
+        "answer": "The Back 💪"
+      },
+      {
+        "id": 4,
+        "text": "Which hairstyle of yours does your mans' like the most?",
+        "options": ["The Graduation-Wifey Hair", "The Horsetail Hair", "The Gold and Black Piano Hair", "Bald because he is broke"],
+        "hint":"You never let me touch it",
+        "answer": "The Gold and Black Piano Hair"
+      }
+    ]
+  }
