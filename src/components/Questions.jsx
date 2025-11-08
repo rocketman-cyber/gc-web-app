@@ -7,7 +7,7 @@ export default function Questions({ onSuccess, showToast }) {
   const [answers, setAnswers] = useState({});
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/Melvin95/goofy_chica_things/refs/heads/main/questions.json")
+    fetch("https://raw.githubusercontent.com/Melvin95/gc-web-app/refs/heads/main/json/questions.json")
       .then(res => res.json())
       .then(data => setQuestions(data.questions))
       .catch(err => console.error("Error loading questions:", err));
