@@ -27,6 +27,13 @@
         "options": ["The Graduation-Wifey Hair", "The Horsetail Hair", "The Gold and Black Piano Hair", "Bald because he is broke"],
         "hint":"You never let me touch it",
         "answer": "The Gold and Black Piano Hair"
-      }
+      },
+        {
+        "id": 5,
+        "text": "What would your mans do if he won the Lotto?",
+        "options": ["Ghost you", "Buy you food", "Lie to you that he his broke", "Fly you to Fiji to propose"],
+        "hint": "Manifest it",
+        "answer":"Fly you to Fiji to propose"
+}
     ]
   }
