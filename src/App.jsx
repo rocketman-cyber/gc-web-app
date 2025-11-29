@@ -5,6 +5,7 @@ import Toast from "./components/Toast";
 import "./index.css";
 import Questions from "./components/Questions";
 import { vigenereDecrypt } from "./utils/vigenere";
+import { timeSince } from "./utils/timeUtils";
 
 export default function App() {
 
@@ -17,6 +18,19 @@ export default function App() {
     setToast(msg);
     setTimeout(() => setToast(""), 3000);
   };
+
+  async function getLastCuddledCard(){
+    let daySinceLastCuddle = 0;
+    
+    await fetch("/.netlify/functions/getLastHug")
+      .then(res => res.json())
+      .then(data => daySinceLastCuddle = timeSince(new Date(data.lastHugDate)).days);
+
+    const text = `It has been ${daySinceLastCuddle} day(s) since we last cuddled 🫂`;
+
+    return text;
+  }
+
 
   function getGreetingCard() {
 
@@ -37,14 +51,17 @@ export default function App() {
   }
 
   async function loadCards () {
+    const lastHuggedCard = await getLastCuddledCard();
+
     await fetch("/cipher.txt")
     .then((r) => r.text())
     .then((text) => {
       let plain = vigenereDecrypt(text.trim(), "ROCKETMAN");
       const lines = plain.split(/\r?\n/).filter(Boolean);
 
+      
       const greetingCard = getGreetingCard().text;
-      const updatedLines = [greetingCard, ...lines];
+      const updatedLines = [greetingCard, lastHuggedCard, ...lines];
 
       setCards(updatedLines);
     })
@@ -89,8 +106,9 @@ export default function App() {
   };
 
   return (
+    
     <div className="mainapp">
-      
+
     {!unlocked ? (
       <Questions onSuccess={handleSuccess} showToast={showToast} />
     ) : (
